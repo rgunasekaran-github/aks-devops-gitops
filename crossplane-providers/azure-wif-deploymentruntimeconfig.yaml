@@ -14,3 +14,5 @@ spec:
             azure.workload.identity/use: "true"
         spec:
           serviceAccountName: crossplane-azure-provider
+          containers:
+            - name: package-runtime
