@@ -1,6 +1,15 @@
 controller:
+  config:
+    default-server-snippet: |
+      location /healthz {
+        return 200;
+        add_header Content-Type text/plain;
+        access_log off;
+      }
   service:
     type: LoadBalancer
+    annotations:
+      service.beta.kubernetes.io/azure-load-balancer-health-probe-request-path: /healthz
   ingressClassResource:
     name: nginx
     enabled: true
