@@ -21,7 +21,7 @@ spec:
     metadata:
       name: "demo-pr-{{ .number }}"
       annotations:
-        preview/url: "http://demo-pr-{{ .number }}.20.31.0.97.sslip.io"
+        preview/url: "http://demo-pr-{{ .number }}.20-31-0-97.sslip.io"
         notifications.argoproj.io/subscribe.on-preview-healthy.github: ""
     spec:
       project: default
@@ -38,7 +38,7 @@ spec:
           - name: cosmos.databaseName
             value: "pr-{{ .number }}-db"
           - name: ingress.hostname
-            value: "demo-pr-{{ .number }}.20.31.0.97.sslip.io"
+            value: "demo-pr-{{ .number }}.20-31-0-97.sslip.io"
           - name: image.tag
             value: "{{ .head_sha }}"
       destination:
